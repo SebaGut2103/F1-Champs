@@ -1,4 +1,4 @@
-function createRoomCard(drivers) {
+function createdriverCard(drivers) {
     const card = document.createElement('div');
     card.className = 'bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105 duration-300';
 
@@ -45,7 +45,7 @@ function createRoomCard(drivers) {
     return card;
   }
 
-  function loadRooms() {
+  function loaddrivers() {
     const driversContainer = document.getElementById('drivers-container');
     
     // Mostrar un mensaje de carga
@@ -65,7 +65,7 @@ function createRoomCard(drivers) {
 
         // Procesar los datos y crear las tarjetas
         drivers.forEach(drivers => {
-          const card = createRoomCard(drivers);
+          const card = createdriverCard(drivers);
           driversContainer.appendChild(card);
         });
       })
@@ -76,6 +76,20 @@ function createRoomCard(drivers) {
   }
 
   // Cargar las habitaciones cuando el DOM esté listo
-  document.addEventListener('DOMContentLoaded', loadRooms);
+  document.addEventListener('DOMContentLoaded', loaddrivers);
 
-  
+  //Menú hamburguesa 
+  const toggleButton = document.getElementById("burger")
+  const navWrapper = document.getElementById("nav");
+
+  toggleButton.addEventListener("click", () =>{
+    toggleButton.classList.toggle("close");
+    navWrapper.classList.toggle("show");
+  });
+
+  navWrapper.addEventListener("click", e => {
+    if(e.target.id === "nav"){
+      navWrapper.classList.remove("shpow");
+      toggleButton.classList.remove("close");
+    }
+  })
