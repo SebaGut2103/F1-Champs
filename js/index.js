@@ -93,3 +93,7 @@ function createdriverCard(drivers) {
       toggleButton.classList.remove("close");
     }
   })
+
+  function Search(){
+    
+  }
